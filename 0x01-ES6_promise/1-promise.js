@@ -1,7 +1,7 @@
 export default function getFullResponseFromAPI(success) {
   return new Promise((resolve, reject) => {
     if (success) {
-      let obj = {
+      const obj = {
         status: 200,
         body: 'Success',
       };
