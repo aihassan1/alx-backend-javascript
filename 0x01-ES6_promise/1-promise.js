@@ -6,7 +6,7 @@ export default function getFullResponseFromAPI(success) {
         body: 'Success',
       };
       resolve(obj);
-    } else {
+    } else if (!success) {
       let errObj = {
         Error: 'The fake API is not working currently',
       };
