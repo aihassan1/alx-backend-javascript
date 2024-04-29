@@ -1,7 +1,11 @@
 import signUpUser from './4-user-promise';
 import uploadPhoto from './5-photo-reject';
 export default function handleProfileSignup(firstName, lastName, fileName) {
-  return Promise.all([signUpUser(), uploadPhoto()]).then((value) => {
+  return Promise.allSettled([
+    signUpUser(firstName, lastName),
+    uploadPhoto(fileName),
+  ]).catch((error) => {
+    console.log(error);
   });
 }
-console.log(handleProfileSignup('Bob', 'Dylan', 'bob_dylan.jpg'));
+console.log(handleProfileSignup('Bob', 'Dylan', 'x'));
