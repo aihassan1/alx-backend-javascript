@@ -1,6 +1,6 @@
 export default function signUpUser(firstName, lastName) {
-  return {
+  return new Promise({
     firstName,
     lastName,
-  };
+  });
 }
