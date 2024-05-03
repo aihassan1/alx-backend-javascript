@@ -1,22 +1,21 @@
 export default function getListStudents() {
-  const Guillaume = {
-    id: 1,
-    firstName: 'Guillaume',
-    location: 'San Francisco',
-  };
-  const James = {
-    id: 2,
-    firstName: 'James',
-    location: 'Columbia',
-  };
-  const Serena = {
-    id: 3,
-    firstName: 'Serena',
-    location: 'San Francisco',
-  };
-  const arrayOfObjects = [Guillaume, James, Serena];
-  return arrayOfObjects;
+  return [
+    {
+      id: 1,
+      firstName: 'Guillaume',
+      location: 'San Francisco',
+    },
+    {
+      id: 2,
+      firstName: 'James',
+      location: 'Columbia',
+    },
+    {
+      id: 3,
+      firstName: 'Serena',
+      location: 'San Francisco',
+    },
+  ];
 }
 
 console.log(getListStudents());
-
