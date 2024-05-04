@@ -8,6 +8,5 @@ export default function createInt8TypedArray(length, position, value) {
 
   int8View[position] = value;
 
-  return new DataView(buffer);
+  return buffer;
 }
-console.log(createInt8TypedArray(12, 23, 5));
