@@ -36,18 +36,14 @@ const app = http.createServer(async (req, res) => {
   } else if (req.url === '/students') {
     const databaseName = process.argv[2];
 
-    try {
-      let output = 'This is the list of our students\n';
-      const studentData = await countStudents(databaseName);
+    let output = 'This is the list of our students\n';
+    const studentData = await countStudents(databaseName);
 
-      output += `${studentData}`;
-      res.writeHead(200, { 'Content-Type': 'text/plain' });
-      res.end(output);
-    } catch (err) {
-      res.writeHead(500, { 'Content-Type': 'text/plain' });
-      res.end('Cannot load the database');
-    }
+    output += `${studentData}`;
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end(output);
   }
 });
 
 app.listen(1245);
+module.exports = app;
