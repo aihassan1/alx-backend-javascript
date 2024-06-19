@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
   res.send('Hello Holberton School!');
 });
 
-path = process.argv[2];
+const path = process.argv[2];
 app.get('/students', async (req, res) => {
   const output = await countStudents(path);
   res.send(output);
