@@ -37,7 +37,7 @@ const app = http.createServer(async (req, res) => {
     const databaseName = process.argv[2];
 
     try {
-      let output = 'This is the list of our students';
+      let output = 'This is the list of our students\n';
       const studentData = await countStudents(databaseName);
 
       output += `${studentData}`;
