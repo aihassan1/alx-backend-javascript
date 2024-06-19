@@ -11,8 +11,8 @@ function countStudents(path) {
   rows.shift();
   const students = rows.map((row) => row.split(','));
 
-  const SWE_SS = [],
-    CS_SS = [];
+  const SWE_SS = [];
+  const CS_SS = [];
 
   students.forEach((student) => {
     if (student[3] === 'SWE') SWE_SS.push(` ${student[0]}`);
