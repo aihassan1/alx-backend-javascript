@@ -1,4 +1,4 @@
-const http = require('http');
+const express = require('express');
 const fs = require('fs').promises;
 
 async function countStudents(path) {
@@ -20,30 +20,29 @@ async function countStudents(path) {
       else if (student[3] === 'CS') CS_SS.push(` ${student[0]}`);
     });
 
-    const output = `Number of students: ${NumberOfStudents}
+    const output = `This is the list of our students
+Number of students: ${NumberOfStudents}
 Number of students in CS: ${CS_SS.length}. List:${CS_SS}
 Number of students in SWE: ${SWE_SS.length}. List:${SWE_SS}`;
+
     return output;
   } catch (err) {
     throw new Error('Cannot load the database');
   }
 }
 
-const app = http.createServer(async (req, res) => {
-  if (req.url === '/') {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello Holberton School!');
-  } else if (req.url === '/students') {
-    const databaseName = process.argv[2];
+const app = express();
 
-    let output = 'This is the list of our students\n';
-    const studentData = await countStudents(databaseName);
+app.get('/', (req, res) => {
+  res.send('Hello Holberton School!');
+});
 
-    output += `${studentData}`;
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end(output);
-  }
+path = process.argv[2];
+app.get('/students', async (req, res) => {
+  const output = await countStudents(path);
+  res.send(output);
 });
 
 app.listen(1245);
+
 module.exports = app;
