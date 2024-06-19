@@ -1,9 +1,8 @@
 const express = require('express');
-const app = require('./4-http');
 
 const app = express();
 
-app.getConnections('/', (req, res) => {
+app.get('/', (req, res) => {
   res.send('Hello Holberton School!');
 });
 
