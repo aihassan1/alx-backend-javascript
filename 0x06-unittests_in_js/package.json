@@ -1,0 +1,15 @@
+{
+  "name": "0x06-unittests_in_js",
+  "version": "1.0.0",
+  "description": "Unit Testing in JavaScript with Mocha, Chai, and Sinon This project provides a hands-on introduction to unit testing in JavaScript using Mocha, Chai, and Sinon. You'll build your skills by creating a series of tests for various functionalities.",
+  "main": "0-calcul.js",
+  "scripts": {
+    "test": "mocha "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^10.4.0"
+  }
+}
