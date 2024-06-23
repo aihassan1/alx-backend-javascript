@@ -3,21 +3,21 @@ const chai = require('chai');
 const expect = chai.expect;
 
 describe('tests for calculateNumber function', function () {
-  describe('Sum', () => {
+  describe('type=SUM', () => {
     it('should round 2 numbers then add them 2.5 + 1.4 = 4', () => {
       expect(calculateNumber('SUM', 2.5, 1.4)).to.equal(4);
       expect(calculateNumber('SUM', 2, 1)).to.equal(3);
     });
   });
 
-  describe('Subtract', () => {
+  describe('type=Subtract', () => {
     it('should round the two numbers, and subtract b from a 5.5 - 3.4 = 3', () => {
       expect(calculateNumber('SUBTRACT', 5.5, 3.4)).to.equal(3);
       expect(calculateNumber('SUBTRACT', 6, 3)).to.equal(3);
     });
   });
 
-  describe('DIVIDE', () => {
+  describe('type=DIVIDE', () => {
     it(`DIVIDE, round the two numbers, and divide a with b ->
       6.4 / 2.5 = 2,  5 / 0.3 => Error`, () => {
       expect(calculateNumber('DIVIDE', 5.5, 2.7)).to.equal(2);
