@@ -3,6 +3,7 @@ const sinon = require('sinon');
 const Utils = require('./utils');
 const chai = require('chai');
 
+
 const expect = chai.expect;
 
 describe('sendPaymentRequestToApi', () => {
