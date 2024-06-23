@@ -1,6 +1,6 @@
+const calculateNumber = require('./1-calcul');
 const chai = require('chai');
 const expect = chai.expect;
-const calculateNumber = require('./1-calcul');
 
 describe('tests for calculateNumber function', function () {
   it('should round 2 numbers then add them 2.5 + 1.4 = 4', () => {
