@@ -2,7 +2,7 @@ const sendPaymentRequestToApi = require('./3-payment');
 const sinon = require('sinon');
 const Utils = require('./utils');
 const chai = require('chai');
-
+const { calculateNumber } = require('./utils');
 
 const expect = chai.expect;
 
