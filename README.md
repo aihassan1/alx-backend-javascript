@@ -1,1 +1,2 @@
-this is a readme for the repo
+this is a readme for js projects
+
